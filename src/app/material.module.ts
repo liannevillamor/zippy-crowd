@@ -2,17 +2,29 @@ import { NgModule } from '@angular/core';
 
 import {
     MatAutocompleteModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatInputModule,
+    MatSlideToggleModule
 } from '@angular/material';
 
 @NgModule({
     imports: [
         MatAutocompleteModule,
-        MatButtonModule
+        MatButtonModule,
+        MatToolbarModule,
+        MatGridListModule,
+        MatInputModule,
+        MatSlideToggleModule
     ],
     exports: [
         MatAutocompleteModule,
-        MatButtonModule
+        MatButtonModule,
+        MatToolbarModule,
+        MatGridListModule,
+        MatInputModule,
+        MatSlideToggleModule
     ]
 })
 

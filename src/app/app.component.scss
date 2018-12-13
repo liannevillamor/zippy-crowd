@@ -1,0 +1,17 @@
+@import './src/scss/_variables.scss';
+
+.main-container {
+    overflow: hidden;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    app-landing-background, app-recommendations {
+        width: 100%;
+    }
+
+    .center-image {
+        position: absolute;
+        left: 50%;
+        margin-left: -39px;
+    }
+}

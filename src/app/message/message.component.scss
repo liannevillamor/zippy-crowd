@@ -1,0 +1,22 @@
+@import './src/scss/_variables.scss';
+
+.message-content {
+
+    display: flex;
+
+    img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        align-self: flex-end;
+    }
+
+    .content {
+        background-color: #fff;
+        color: $primary-color;
+        padding: 15px 25px;
+        width: 50%;
+        border-radius: 20px;
+    }
+
+}

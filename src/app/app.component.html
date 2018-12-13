@@ -1,6 +1,23 @@
-<div style="text-align:center">
-  <h1>
-    Zippy Crowd
-  </h1>
+<div class="main-container">
+
+  <div>
+      <div fxLayout="row" fxFlex="50%" *ngIf="!media.isActive('xs') && !media.isActive('sm')">
+            <app-landing-background></app-landing-background>
+      </div>
+
+      <div class="center-image"
+            *ngIf="!media.isActive('xs') && !media.isActive('sm')"
+            [ngStyle.md]="{'bottom.vh': 40}"
+            [ngStyle.lg]="{'bottom.vh': 30}"
+            [ngStyle.xl]="{'bottom.vh': 30}">
+        <img [src]="centerImage">
+      </div>
+  
+      <div fxLayout="row" fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+            <app-recommendations></app-recommendations>
+      </div>
+  </div>
+
 </div>
+
 <router-outlet></router-outlet>

@@ -1,0 +1,89 @@
+<div class="recommendations">
+  
+  <app-login-toolbar></app-login-toolbar>
+
+  <div class="content">
+  
+    <div 
+      class="title"
+      [ngStyle.xs]="{'padding-top.px': 80}"
+      [ngStyle.sm]="{'padding-top.px': 100}"
+      [ngStyle.md]="{'padding-top.px': 100}"
+      [ngStyle.lg]="{'padding-top.px': 120}"
+      [ngStyle.xl]="{'padding-top.px': 120}"
+      >
+      
+      <div 
+        class="heading"
+        [ngStyle.xs]="{'font-size.px': 30}"
+        [ngStyle.sm]="{'font-size.px': 40}"
+        [ngStyle.md]="{'font-size.px': 40}"
+        [ngStyle.lg]="{'font-size.px': 50}"
+        [ngStyle.xl]="{'font-size.px': 50}">
+        Recommendations.
+      </div>
+      <div 
+        class="sub-heading"
+        [ngStyle.xs]="{'font-size.px': 14}"
+        [ngStyle.sm]="{'font-size.px': 20}"
+        [ngStyle.md]="{'font-size.px': 20}"
+        [ngStyle.lg]="{'font-size.px': 24}"
+        [ngStyle.xl]="{'font-size.px': 24}">
+        People you need from people you trust.
+      </div>
+
+    </div>
+
+    <div class="message">
+    
+      <app-message></app-message>
+
+    </div>
+
+    <div class="input-container">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
+
+    <div class="input-container loc">
+      
+      <mat-slide-toggle [labelPosition]="'before'" [checked]=true>Any location</mat-slide-toggle>
+
+    </div>
+
+    <div class="recss-container">
+      
+      <div class="recs">
+        
+        <img [src]="recsImage">
+
+        <span>Ask for Recs</span>
+
+      </div>
+
+    </div>
+
+    <!-- <div>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+    </div> -->
+
+  </div>
+
+</div>

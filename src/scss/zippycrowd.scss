@@ -1,0 +1,132 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@import './variables';
+@import './mixins';
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+.clear {
+    color: $primary-color;
+}
+.fill {
+    background-color: $primary-color;
+    color: #fff;
+}
+
+$primary-color: (
+    50 : #eceaf1,
+    100 : #cfc9dd,
+    200 : #b0a6c6,
+    300 : #9082af,
+    400 : #78679d,
+    500 : #604c8c,
+    600 : #584584,
+    700 : #4e3c79,
+    800 : #44336f,
+    900 : #33245c,
+    A100 : #b8a0ff,
+    A200 : #936dff,
+    A400 : #6d3aff,
+    A700 : #5a20ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$accent-color: (
+    50 : #e9e7ee,
+    100 : #c9c4d4,
+    200 : #a59cb7,
+    300 : #80749a,
+    400 : #655784,
+    500 : #4a396e,
+    600 : #433366,
+    700 : #3a2c5b,
+    800 : #322451,
+    900 : #22173f,
+    A100 : #a07fff,
+    A200 : #7a4cff,
+    A400 : #5419ff,
+    A700 : #4100fe,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+// $accent-color: (
+//     50 : #e7e6eb,
+//     100 : #c4c0cc,
+//     200 : #9d96ab,
+//     300 : #756c89,
+//     400 : #584d6f,
+//     500 : #3a2d56,
+//     600 : #34284f,
+//     700 : #2c2245,
+//     800 : #251c3c,
+//     900 : #18112b,
+//     A100 : #936bff,
+//     A200 : #6e38ff,
+//     A400 : #4905ff,
+//     A700 : #4000eb,
+//     contrast: (
+//         50 : #000000,
+//         100 : #000000,
+//         200 : #000000,
+//         300 : #ffffff,
+//         400 : #ffffff,
+//         500 : #ffffff,
+//         600 : #ffffff,
+//         700 : #ffffff,
+//         800 : #ffffff,
+//         900 : #ffffff,
+//         A100 : #000000,
+//         A200 : #ffffff,
+//         A400 : #ffffff,
+//         A700 : #ffffff,
+//     )
+// );
+
+$zippy-crowd-primary-color: mat-palette($primary-color, 500);
+
+$zippy-crowd-accent-color:  mat-palette($accent-color, 500, A100, A400);
+
+$zippy-crowd-warn: mat-palette($mat-deep-orange);
+
+$zippy-crowd-theme: mat-light-theme($zippy-crowd-primary-color, $zippy-crowd-accent-color, $zippy-crowd-warn);
+
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($zippy-crowd-theme);
