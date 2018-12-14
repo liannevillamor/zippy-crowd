@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
-  character: any = '../assets/images/msg.png';
+  character: any = '../../assets/images/msg.png';
 
   constructor() { }
 
