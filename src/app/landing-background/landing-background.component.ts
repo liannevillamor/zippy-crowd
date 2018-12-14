@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingBackgroundComponent implements OnInit {
 
+  backgroundImage: any = './assets/images/zippycrowd.png';
+
   constructor() { }
 
   ngOnInit() {
