@@ -8,10 +8,10 @@ app-login-toolbar {
     height: 100%;
     display: flex;
     flex-direction: column;
+    
     .content {
-        background-color: #F9FBFD;
+        background-color: #F1F5F9;
         height: 100%;
-        // padding-top: 150px;    
         display: flex;
         flex-direction: column;
         padding: 0 120px;
@@ -19,9 +19,6 @@ app-login-toolbar {
         .title {
             display: flex;
             flex-direction: column;
-            //width: auto;
-            //margin: 0 auto;
-            //min-width: 350px;
             .heading {
                 letter-spacing: 1px;
             }
@@ -36,18 +33,26 @@ app-login-toolbar {
         .message {
             display: flex;
             flex-direction: column;
-            //width: auto;
             margin: 40px auto 20px auto;
             min-width: 350px;
         }
 
         .input-container {
-            //width: 100%;
             background-color: #fff;
             padding: 15px;
             border-radius: 20px;
             margin-bottom: 20px;
             display: flex;
+            .mat-form-field {
+                .mat-form-field-appearance-legacy .mat-form-field-infix {
+                    padding: 0;
+                }
+            }
+            input {
+                border: none;
+                width: 100%;
+                line-height: 25px;
+            }
         }
 
         .input-container.loc {
@@ -57,7 +62,6 @@ app-login-toolbar {
         }
 
         .recss-container {
-            //width: 100%;
             display: flex;
             justify-content: flex-end;
             padding: 0;
@@ -78,7 +82,40 @@ app-login-toolbar {
         }
     }
 
+    .content.xs {
+        height: 100vh;
+        padding: 0;
+        .title {
+            align-items: center;
+        }
+    }
+
+    .content.sm {
+        height: 100vh;
+        .message {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
     .mat-form-field {
         width: 100%;
+    }
+}
+
+.recommendations.handset {
+
+    .content {
+        padding: 0 20px;
+    }
+}
+
+.recommendations.tablet {
+
+    .content {
+        padding: 0 80px;
+        .title {
+            padding-top: 50px;
+        }
     }
 }

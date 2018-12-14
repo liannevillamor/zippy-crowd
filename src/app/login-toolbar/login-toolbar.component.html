@@ -1,13 +1,32 @@
-<mat-toolbar class="login-toolbar mat-elevation-z6">
+<div *ngIf="!media.isActive('xs') && !media.isActive('sm')">
 
-  <span class="toolbar-items mat-body mat-body-1">New to Zippy Crowd?</span>
+  <mat-toolbar class="login-toolbar mat-elevation-z6">
 
-  <button class="toolbar-items clear mat-body mat-body-1">GET STARTED</button>
+    <span class="toolbar-items mat-body mat-body-1">New to Zippy Crowd?</span>
 
-  <span class="toolbar-items mat-body mat-body-1"> or </span>
+    <button class="toolbar-items clear mat-body mat-body-1">GET STARTED</button>
 
-  <button class="toolbar-items fill mat-small mat-caption">Log in</button>
+    <span class="toolbar-items mat-body mat-body-1"> or </span>
 
-  <div class="toolbar-items menu"><fa name="bars"></fa></div>
+    <button class="toolbar-items fill mat-small mat-caption">Log in</button>
 
-</mat-toolbar>
+    <div class="toolbar-items menu"><fa name="bars"></fa></div>
+
+  </mat-toolbar>
+
+</div>
+
+<div *ngIf="media.isActive('xs') || media.isActive('sm')">
+
+  <mat-toolbar class="login-toolbar mat-elevation-z6">
+
+    <div class="toolbar-items menu" [matMenuTriggerFor]="menu"><fa name="bars"></fa></div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>New to Zippy Crowd?</button>
+      <button mat-menu-item>Get Started</button>
+      <button mat-menu-item>Log in</button>
+    </mat-menu>
+
+  </mat-toolbar>
+
+</div>

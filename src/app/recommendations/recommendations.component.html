@@ -1,23 +1,25 @@
-<div class="recommendations">
+<div 
+  class="recommendations" 
+  [ngClass]="{'handset': (isHandset$ | async), 'tablet': (isTablet$ | async), 'web': (isWeb$ | async)}">
   
   <app-login-toolbar></app-login-toolbar>
 
-  <div class="content">
+  <div class="content" ngClass.xs="xs" ngClass.sm="sm">
   
     <div 
       class="title"
       [ngStyle.xs]="{'padding-top.px': 80}"
       [ngStyle.sm]="{'padding-top.px': 100}"
-      [ngStyle.md]="{'padding-top.px': 100}"
+      [ngStyle.md]="{'padding-top.px': 44}"
       [ngStyle.lg]="{'padding-top.px': 120}"
       [ngStyle.xl]="{'padding-top.px': 120}"
       >
-      
+
       <div 
         class="heading"
         [ngStyle.xs]="{'font-size.px': 30}"
         [ngStyle.sm]="{'font-size.px': 40}"
-        [ngStyle.md]="{'font-size.px': 40}"
+        [ngStyle.md]="{'font-size.px': 50}"
         [ngStyle.lg]="{'font-size.px': 50}"
         [ngStyle.xl]="{'font-size.px': 50}">
         Recommendations.
@@ -26,7 +28,7 @@
         class="sub-heading"
         [ngStyle.xs]="{'font-size.px': 14}"
         [ngStyle.sm]="{'font-size.px': 20}"
-        [ngStyle.md]="{'font-size.px': 20}"
+        [ngStyle.md]="{'font-size.px': 18}"
         [ngStyle.lg]="{'font-size.px': 24}"
         [ngStyle.xl]="{'font-size.px': 24}">
         People you need from people you trust.
@@ -41,16 +43,16 @@
     </div>
 
     <div class="input-container">
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete">
+      <!-- <form class="example-form"> -->
+        <!-- <mat-form-field class="example-full-width"> -->
+          <input type="text" placeholder="I'm looking for..." aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete" [classList]="'recs'" [disableRipple]="true" [panelWidth]=200>
             <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
               {{option}}
             </mat-option>
           </mat-autocomplete>
-        </mat-form-field>
-      </form>
+        <!-- </mat-form-field> -->
+      <!-- </form> -->
     </div>
 
     <div class="input-container loc">

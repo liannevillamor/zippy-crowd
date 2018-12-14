@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ObservableMedia, MediaChange } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-login-toolbar',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginToolbarComponent implements OnInit {
 
-  constructor() { }
+  public state = '';
+
+  constructor(public media: ObservableMedia) {
+    media.asObservable()
+      .subscribe((change: MediaChange) => {
+        this.state = change ? `'${change.mqAlias}'` : '';
+        console.log('STATE: ', this.state);
+    });
+  }
 
   ngOnInit() {
   }
