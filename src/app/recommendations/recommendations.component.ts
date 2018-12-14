@@ -15,7 +15,7 @@ export class RecommendationsComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ['Hairdresser', 'Plumber', 'UX Designer', 'Frontend Developer', 'Digital Marketer', 'Babysitter'];
   filteredOptions: Observable<string[]>;
-  recsImage: any = '../../assets/images/recs.png';
+  recsImage: any = '../assets/images/recs.png';
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(map(result => result.matches));
   isTablet$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Tablet).pipe(map(result => result.matches));
   isWeb$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Web).pipe(map(result => result.matches));
