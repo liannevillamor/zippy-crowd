@@ -9,7 +9,6 @@ import { ObservableMedia, MediaChange } from '@angular/flex-layout';
 })
 export class AppComponent implements OnInit {
   title = 'zippy-crowd';
-  centerImage: any = '../assets/images/center.png';
   public state = '';
 
   constructor(public media: ObservableMedia) {
