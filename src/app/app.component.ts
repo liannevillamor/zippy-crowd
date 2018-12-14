@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
     media.asObservable()
       .subscribe((change: MediaChange) => {
         this.state = change ? `'${change.mqAlias}'` : '';
-        console.log('STATE: ', this.state);
     });
   }
 
